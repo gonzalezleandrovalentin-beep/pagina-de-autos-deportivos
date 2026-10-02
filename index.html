@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Autos deportivos: velocidad, motor y diseño</title>
+  <meta name="description" content="Guía sobre autos deportivos: modelos icónicos, datos técnicos y conceptos clave.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="progreso" id="progreso"></div>
+  <header class="top">
+    <a class="logo" href="#inicio">Autos deportivos</a>
+    <nav aria-label="Principal">
+      <a href="#modelos">Modelos</a>
+      <a href="#comparativa">Comparativa</a>
+      <a href="#historia">Historia</a>
+      <a href="#conceptos">Conceptos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <p class="hero-kicker">Hasta 350 km/h con matrícula</p>
+      <h1>Hechos para<br><span class="outline">ir rápido.</span></h1>
+      <div class="hero-meter" aria-live="off">
+        <span id="contador" class="meter-num">0</span>
+        <span class="meter-unit">km/h<br>velocidad máxima<br>del Lamborghini Revuelto</span>
+      </div>
+      <p class="hero-text">Un auto deportivo combina motor potente, poco peso y aerodinámica para que cada kilo y cada caballo de fuerza cuenten. Acá encontrás seis modelos que marcaron época, sus datos y las ideas básicas para entenderlos.</p>
+    </section>
+
+    <section class="section" id="modelos">
+      <div class="section-head">
+        <h2>Modelos</h2>
+        <div class="filters" role="group" aria-label="Filtrar por origen">
+          <button class="chip is-active" data-filter="todos">Todos</button>
+          <button class="chip" data-filter="Alemania">Alemania</button>
+          <button class="chip" data-filter="Italia">Italia</button>
+          <button class="chip" data-filter="Reino Unido">Reino Unido</button>
+          <button class="chip" data-filter="Japón">Japón</button>
+          <button class="chip" data-filter="Estados Unidos">Estados Unidos</button>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="section inverse" id="comparativa">
+      <div class="section-head">
+        <h2>Comparativa</h2>
+        <div class="filters" role="group" aria-label="Elegir dato a comparar">
+          <button class="chip chip-inv is-active" data-metric="hp">Potencia</button>
+          <button class="chip chip-inv" data-metric="acc">0–100 km/h</button>
+          <button class="chip chip-inv" data-metric="vmax">Velocidad máxima</button>
+        </div>
+      </div>
+      <p class="note" id="nota"></p>
+      <div class="bars" id="bars"></div>
+    </section>
+
+    <section class="section" id="historia">
+      <h2>Historia</h2>
+      <ol class="timeline">
+        <li><strong>1963</strong><p>Porsche presenta el 911 en Fráncfort. Seis décadas después sigue fabricándose con la misma silueta y motor trasero.</p></li>
+        <li><strong>1966</strong><p>Lamborghini lanza el Miura, considerado el primer superdeportivo de calle con motor central.</p></li>
+        <li><strong>1987</strong><p>Ferrari presenta el F40, el último auto aprobado por Enzo Ferrari, con carrocería liviana y turbo.</p></li>
+        <li><strong>1992</strong><p>McLaren muestra el F1, con chasis de fibra de carbono y un V12. Años después fue el auto de producción atmosférico más rápido del mundo.</p></li>
+        <li><strong>2007</strong><p>Nissan lanza el GT-R (R35) con tracción integral y electrónica avanzada, a una fracción del precio de sus rivales europeos.</p></li>
+        <li><strong>2023</strong><p>Lamborghini presenta el Revuelto, su primer híbrido enchufable de serie, con más de 1.000 hp.</p></li>
+      </ol>
+    </section>
+
+    <section class="section" id="conceptos">
+      <h2>Conceptos clave</h2>
+      <dl class="terms">
+        <div><dt>Caballos de fuerza (hp)</dt><dd>Mide la potencia del motor. A más hp, más capacidad de acelerar y mantener alta velocidad.</dd></div>
+        <div><dt>Relación peso-potencia</dt><dd>Se obtiene dividiendo el peso entre la potencia. Un auto liviano necesita menos hp para ser rápido.</dd></div>
+        <div><dt>Motor central</dt><dd>El motor va detrás de los asientos y delante del eje trasero. Reparte mejor el peso y mejora el giro en curvas.</dd></div>
+        <div><dt>Híbrido enchufable</dt><dd>Suma un motor eléctrico al de combustión. Entrega empuje inmediato al arrancar y puede circular un tramo sin gasolina.</dd></div>
+        <div><dt>Carga aerodinámica</dt><dd>Fuerza que presiona el auto contra el asfalto a alta velocidad, gracias a alerones y fondos planos. Da más agarre.</dd></div>
+        <div><dt>Doble embrague (PDK, DCT)</dt><dd>Caja automática con dos embragues que cambia de marcha en milisegundos, sin cortar la tracción.</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <dialog id="detalle" aria-labelledby="d-titulo">
+    <button class="close" id="cerrar" aria-label="Cerrar">&times;</button>
+    <p class="d-origen" id="d-origen"></p>
+    <h3 id="d-titulo"></h3>
+    <p id="d-desc"></p>
+    <ul class="d-specs" id="d-specs"></ul>
+  </dialog>
+
+  <footer>
+    <p>Datos aproximados según cifras publicadas por los fabricantes; pueden variar según versión y mercado.</p>
+  </footer>
+
+  <button class="arriba" id="arriba" aria-label="Volver arriba">&uarr;</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
